@@ -1,0 +1,49 @@
+<section class="h-dvh w-full flex flex-col justify-center items-center gap-5">
+  <div class="flex flex-col gap-2">
+    <div class="flex justify-center items-center gap-2">
+      <div class="bg-blue-600 font-extrabold text-white flex items-center justify-center w-11 h-11 rounded-lg">
+        <p class="text-xl">
+          &lt;/&gt;
+        </p>
+      </div>
+      <h1 class="text-4xl font-bold">DevLog</h1>
+    </div>
+    <p class="text-center text-lg text-zinc-500 font-semibold">Painel Administrativo</p>
+  </div>
+  <p-card class="p-3 w-1/3">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-8">
+      <div class="flex flex-col gap-3">
+        <h2 class="text-2xl font-semibold">Entrar</h2>
+        <p class=" text-zinc-500">Digite suas credenciais para acessar o painel</p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-5">
+          <div class="flex flex-col gap-1">
+            <label>Email</label>
+            <div class="relative">
+              <i class="pi pi-envelope absolute top-1/2 left-3 -translate-y-1/2 text-zinc-500"></i>
+              <input type="email" formControlName="login" name="email" pInputText pSize="small"
+                placeholder="seu@email.com" style="padding-left: 2.5rem;" fluid />
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label>Senha</label>
+            <div class="relative ">
+              <i class="pi pi-lock absolute top-1/2 left-3 -translate-y-1/2 text-zinc-500"></i>
+              <input type="password" formControlName="password" name="password" pInputText pSize="small"
+                placeholder="••••••••" style="padding-left: 2.5rem;" fluid>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="flex justify-center items-center gap-2">
+            <p-checkbox formControlName="rememberMe" [binary]="true" size="small"></p-checkbox>
+            <p>Lembra-me</p>
+          </div>
+          <a href="" class="text-blue-600">Esqueceu a senha?</a>
+        </div>
+        <p-button type="submit" label="Entrar" [disabled]="loginForm.invalid" fluid />
+      </div>
+    </form>
+  </p-card>
+</section>
