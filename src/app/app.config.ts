@@ -1,10 +1,12 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
-import material from '@primeuix/themes/material';
 import { MyPreset } from './styles';
 import { routes } from './app.routes';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { jwtInterceptor } from './core/interceptor/jwt-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,9 +18,14 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: MyPreset,
         options: {
-          darkModeSelector: '.my-app-dark'
+          darkModeSelector: null
+          // '.my-app-dark'
         }
       }
-    })
+    }),
+    MessageService,
+    ConfirmationService,
+    importProvidersFrom(HttpClientModule),
+    provideHttpClient(withInterceptors([jwtInterceptor]))
   ]
 };

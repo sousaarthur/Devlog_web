@@ -10,7 +10,7 @@
     </div>
     <p class="text-center text-lg text-zinc-500 font-semibold">Painel Administrativo</p>
   </div>
-  <p-card class="p-3 w-1/3">
+  <p-card class="p-3 w-90">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-8">
       <div class="flex flex-col gap-3">
         <h2 class="text-2xl font-semibold">Entrar</h2>
@@ -21,17 +21,21 @@
           <div class="flex flex-col gap-1">
             <label>Email</label>
             <div class="relative">
-              <i class="pi pi-envelope absolute top-1/2 left-3 -translate-y-1/2 text-zinc-500"></i>
-              <input type="email" formControlName="login" name="email" pInputText pSize="small"
-                placeholder="seu@email.com" style="padding-left: 2.5rem;" fluid />
+              <p-iconField>
+                <p-inputicon class="pi pi-envelope" />
+                <input type="email" formControlName="login" name="email" pInputText pSize="small"
+                  placeholder="seu@email.com" fluid />
+              </p-iconField>
             </div>
           </div>
           <div class="flex flex-col gap-1">
             <label>Senha</label>
             <div class="relative ">
-              <i class="pi pi-lock absolute top-1/2 left-3 -translate-y-1/2 text-zinc-500"></i>
-              <input type="password" formControlName="password" name="password" pInputText pSize="small"
-                placeholder="••••••••" style="padding-left: 2.5rem;" fluid>
+              <p-iconField>
+                <p-inputicon class="pi pi-lock" />
+                <input type="password" formControlName="password" name="password" pInputText pSize="small"
+                placeholder="••••••••" fluid>
+              </p-iconField>
             </div>
           </div>
         </div>
