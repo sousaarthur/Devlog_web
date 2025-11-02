@@ -14,7 +14,7 @@ import { DrawerMenu } from "../drawer-menu/drawer-menu";
 
 @Component({
   selector: 'app-navbar',
-  imports: [AvatarGroupModule, AvatarModule, ButtonModule, DividerModule, DrawerModule, IconFieldModule, InputIconModule, InputTextModule, CommonModule, MenuModule, Avatar, DrawerMenu],
+  imports: [AvatarGroupModule, AvatarModule, ButtonModule, DividerModule, DrawerModule, IconFieldModule, InputIconModule, InputTextModule, CommonModule, MenuModule, DrawerMenu],
   standalone: true,
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',

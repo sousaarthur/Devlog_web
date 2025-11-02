@@ -14,10 +14,14 @@ export class User {
   constructor(private http: HttpClient) { }
 
   get(): Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get(this.url).pipe(
+      tap(user => this.userSubject.next(user))
+    );
   }
 
   update(user: UserInterface): Observable<UserInterface> {
-    return this.http.put(this.url, user);
+    return this.http.put(this.url, user).pipe(
+      tap(updatedUser => this.userSubject.next(updatedUser))
+    );
   }
 }

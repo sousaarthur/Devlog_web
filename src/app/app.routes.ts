@@ -12,7 +12,7 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: Panel,
-    canActivate: [authorizationGuard],
+//    canActivate: [authorizationGuard],
     children: [
       {
         path: 'settings',

@@ -39,7 +39,6 @@ constructor(
   @ViewChild('fileInput') fileInput!: ElementRef;
 
   userData: UserInterface = { avatar: '' };
-  nameAbbreviation: string = '';
   imageUrl: string = "";
   configForm!: FormGroup;
   isUploading = false;
@@ -73,13 +72,6 @@ constructor(
     })
   }
 
-  getFirstLetter(word: string): string {
-    if (!word) return '';
-    const parts = word.trim().split(' ');
-    const initials = parts.map((p) => p.charAt(0).toUpperCase());
-    return initials.slice(0, 2).join('');
-  }
-
   triggerFileInput() {
     this.fileInput.nativeElement.click();
   }
@@ -98,7 +90,6 @@ constructor(
           linkedin: data.linkedin,
           github: data.github
         });
-        this.nameAbbreviation = this.getFirstLetter(data.name);
         this.cdr.detectChanges();
       },
     });
@@ -118,7 +109,6 @@ constructor(
     }
     this.userService.update(this.userData).subscribe({
       next: (data) => {
-        window.location.reload();
         console.log(data);
       },
       error: (err) => {

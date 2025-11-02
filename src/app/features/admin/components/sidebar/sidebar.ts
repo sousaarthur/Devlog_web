@@ -15,7 +15,7 @@ import { Login } from "../../../auth/login/login";
 
 @Component({
   selector: 'app-sidebar',
-  imports: [Logo, DividerModule, CommonModule, ButtonModule, AvatarModule, AvatarGroupModule, Avatar, UserInfo, ConfirmDialogModule, Logout, Login],
+  imports: [Logo, DividerModule, CommonModule, ButtonModule, AvatarModule, AvatarGroupModule, Avatar, UserInfo, ConfirmDialogModule, Logout],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })

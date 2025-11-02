@@ -1,18 +1,12 @@
   <div class="flex flex-col md:flex-row-reverse gap-4">
     <p-card class="flex flex-col gap md:flex-1 md:h-70">
       <div class="flex flex-col gap-3">
-        <div class>
+        <div>
           <h2 class="text-xl font-bold">Foto de Perfil</h2>
           <p class="text-zinc-500">Atualize sua foto de perfil.</p>
         </div>
         <div class="w-full flex justify-center">
-          @if(userData.avatar){
           <img [alt]="" [src]="imageUrl" class="rounded-full w-24 h-24 object-cover" />
-          } @else {
-          <div class="flex justify-center items-center rounded-full w-24 h-24 bg-blue-500">
-            <p class="text-5xl text-zinc-100">{{nameAbbreviation}}</p>
-          </div>
-          }
         </div>
         <div class="card flex flex-col justify-center gap-1">
           <button pButton label="Fazer Upload" icon="pi pi-upload" severity="secondary" [disabled]="isUploading"
@@ -58,8 +52,9 @@
                 placeholder="https://github.com/jhondoe" [value]="userData.github" pSize="small">
             </div>
           </div>
-          <div>
+          <div class="flex gap-3">
             <button pButton type="submit" severity="primary" [disabled]="isUploading" icon="pi pi-save">Salvar Alterações</button>
+            <button pButton type="button" severity="secondary" (click)="null" icon="pi pi-times">Cancelar</button>
           </div>
         </form>
       </div>

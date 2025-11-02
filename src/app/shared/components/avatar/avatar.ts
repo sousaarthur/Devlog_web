@@ -3,6 +3,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { User } from '../../../core/service/user';
 import { UserInterface } from '../../../core/interface/userInterface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-avatar',
@@ -24,26 +25,18 @@ import { UserInterface } from '../../../core/interface/userInterface';
   `]
 })
 export class Avatar implements OnInit {
-  user: UserInterface = { avatar: "" };
-
-  constructor(private service: User, private cdr: ChangeDetectorRef) {}
+  user: UserInterface = { avatar: '' };
+  
+  constructor(private service: User, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.service.get().subscribe({
-      next: (data) => {
+    this.service.user$.subscribe(user => {
+      if (user) {
         this.user = {
-          name: this.getFirstLetter(data.name),
-          avatar: data.avatar
+          avatar: user.avatar
         };
         this.cdr.detectChanges();
       }
     });
-  }
-
-  getFirstLetter(word: string): string {
-    if (!word) return '';
-    const parts = word.trim().split(' ');
-    const initials = parts.map(p => p.charAt(0).toUpperCase());
-    return initials.slice(0, 2).join('');
   }
 }
