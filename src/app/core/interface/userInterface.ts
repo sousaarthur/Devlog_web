@@ -6,4 +6,5 @@ export interface UserInterface {
   linkedin?:string;
   github?:string;
   email?:string;
+  role?:string;
 }

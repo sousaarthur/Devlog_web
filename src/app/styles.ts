@@ -1,6 +1,6 @@
 // mypreset.ts
 import { definePreset } from '@primeuix/themes';
-import Lara from '@primeuix/themes/lara';
+import Lara from '@primeuix/themes/aura';
 
 export const MyPreset = definePreset(Lara, {
   semantic: {

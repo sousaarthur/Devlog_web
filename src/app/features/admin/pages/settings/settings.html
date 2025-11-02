@@ -1,0 +1,20 @@
+<section class="flex flex-col gap-3">
+  <div>
+    <h1 class="text-3xl font-bold">Configurções</h1>
+    <p class="text-zinc-500">Gerencie as configurações do seu perfil e do sistema</p>
+  </div>
+  <div class="flex flex-col md:flex-row gap-3">
+    <p-buttongroup>
+      <p-button label="Perfil" icon="pi pi-user" size="small" [outlined]="filter === 'userInfo' ? false : true" [severity]="filter === 'userInfo' ? 'primary' : 'secondary'" (onClick)="switchButton('userInfo')"/>
+      <p-button label="Segurança" icon="pi pi-shield" size="small" [outlined]="filter === 'userSecurity' ? false : true" [severity]="filter === 'userSecurity' ? 'primary' : 'secondary'" (onClick)="switchButton('userSecurity')"/>
+      <p-button label="Aparência" icon="pi pi-palette" size="small" [outlined]="filter === 'userTheme' ? false : true" [severity]="filter === 'userTheme' ? 'primary' : 'secondary'"  (onClick)="switchButton('userTheme')"/>
+    </p-buttongroup>
+  </div>
+  @if(filter === 'userInfo'){
+    <app-config-user-info/>
+  } @else if (filter === 'userSecurity') {
+    <app-config-user-security/>
+  } @else {
+    <app-config-user-theme/>
+  }
+</section>

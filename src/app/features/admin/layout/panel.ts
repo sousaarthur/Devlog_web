@@ -6,10 +6,11 @@ import { RouterOutlet } from '@angular/router';
 import { Sidebar } from "../components/sidebar/sidebar";
 import { ToastModule } from 'primeng/toast';
 import { Divider } from "primeng/divider";
-import { ConfirmDialog } from "primeng/confirmdialog";
+import { Toast } from 'primeng/toast';
+
 @Component({
   selector: 'app-panel',
-  imports: [Navbar, DrawerModule, ButtonModule, RouterOutlet, ToastModule, Sidebar, Divider, ConfirmDialog],
+  imports: [Navbar, DrawerModule, ButtonModule, RouterOutlet, ToastModule, Sidebar, Divider, Toast],
   templateUrl: './panel.html',
   styleUrl: './panel.css',
 })

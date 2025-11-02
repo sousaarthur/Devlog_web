@@ -1,4 +1,7 @@
 <div class="flex flex-col items-start">
-  <p class="font-bold leading-tight">{{user.name}}</p>
+  <div class="flex gap-2 justify-center items-baseline">
+    <p class="text-base font-bold">{{user.name}}</p>
+    <p-tag severity="success" [value]="user.role" styleClass="tag-sm"></p-tag>
+  </div>
   <p class="text-sm text-zinc-400 leading-tight">{{user.email}}</p>
 </div>

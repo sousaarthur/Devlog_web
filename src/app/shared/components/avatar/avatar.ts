@@ -8,17 +8,25 @@ import { UserInterface } from '../../../core/interface/userInterface';
   selector: 'app-avatar',
   imports: [AvatarModule, AvatarGroupModule],
   template: `
-  <p-avatar 
-    [label]="user.avatar == '' || user.avatar == null ? user.name : undefined"
-    [image]="user.avatar"
-    size="large" 
-    [style]="{ 'background-color': user.avatar == '' || user.avatar == null ? '#2b7fff' : null , color: user.avatar == '' || user.avatar == null ? '#fafafa' : null }" 
-    shape="circle" />
+    <p-avatar 
+      [label]="user.avatar == '' || user.avatar == null ? user.name : undefined"
+      [image]="user.avatar"
+      size="large" 
+      [style]="{ 'background-color': user.avatar == '' || user.avatar == null ? '#2b7fff' : null , color: user.avatar == '' || user.avatar == null ? '#fafafa' : null }" 
+      shape="circle" />
   `,
+  styles: [`
+    :host ::ng-deep .p-avatar img {
+      object-fit: cover !important;
+      width: 100%;
+      height: 100%;
+    }
+  `]
 })
 export class Avatar implements OnInit {
-  user: UserInterface = { avatar: "" }
-  constructor(private service: User, private cdr: ChangeDetectorRef) { }
+  user: UserInterface = { avatar: "" };
+
+  constructor(private service: User, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.service.get().subscribe({
@@ -38,5 +46,4 @@ export class Avatar implements OnInit {
     const initials = parts.map(p => p.charAt(0).toUpperCase());
     return initials.slice(0, 2).join('');
   }
-
 }
