@@ -64,7 +64,7 @@ export class Login implements OnInit {
       next: (res) => {
         console.log('Usuário logado com sucesso:', res);
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/admin/panel']);
+        this.router.navigate(['admin/settings']);
         this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Usuário logado com sucesso!' });
       },
       error: (err) => {

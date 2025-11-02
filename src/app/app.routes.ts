@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { Login } from './features/auth/login/login';
-import { Panel } from './features/admin/panel/panel';
+import { Panel } from './features/admin/layout/panel';
 import { authorizationGuard } from './core/guard/authorization-guard';
+import { Settings } from './features/admin/pages/settings/settings';
 
 export const routes: Routes = [
   {
@@ -9,12 +10,19 @@ export const routes: Routes = [
     component: Login
   },
   {
-    path: "admin/panel",
+    path: 'admin',
     component: Panel,
-    canActivate: [authorizationGuard],
+//    canActivate: [authorizationGuard],
+    children: [
+      {
+        path: 'settings',
+        component: Settings
+      }
+    ]
   },
   {
     path: "**",
-    redirectTo: ''
-  }
+    redirectTo: 'admin/login'
+  },
+  
 ];
