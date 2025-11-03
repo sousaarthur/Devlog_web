@@ -44,7 +44,6 @@ constructor(
   isUploading = false;
 
   ngOnInit(): void {
-    this.loadUser();
     this.configForm = this.fb.group({
       name: ['', [Validators.required]],
       email: [''],
@@ -52,6 +51,7 @@ constructor(
       linkedin: [''],
       github: [''],
     });
+    this.loadUser();
   }
 
   uploadImage(event: any) {

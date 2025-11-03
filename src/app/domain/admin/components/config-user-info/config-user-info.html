@@ -1,0 +1,125 @@
+<div class="flex flex-col gap-4 md:flex-row-reverse">
+  <p-card class="flex flex-col gap md:flex-1 md:h-70">
+    <div class="flex flex-col gap-3">
+      <div>
+        <h2 class="text-xl font-bold">Foto de Perfil</h2>
+        <p class="text-zinc-500">Atualize sua foto de perfil.</p>
+      </div>
+
+      <div class="w-full flex justify-center">
+        <img [alt]="" [src]="imageUrl" class="rounded-full w-24 h-24 object-cover" />
+      </div>
+      <div class="flex flex-col justify-center gap-2 items-center">
+        <button
+          pButton
+          label="Fazer Upload"
+          icon="pi pi-upload"
+          severity="secondary"
+          [disabled]="isUploading"
+          outlined
+          (click)="triggerFileInput()"
+        ></button>
+        <input
+          type="file"
+          #fileInput
+          accept="image/*"
+          class="hidden"
+          (change)="uploadImage($event)"
+        />
+        <p class="text-zinc-500 text-sm text-center">PNG, JPG até 2MB</p>
+      </div>
+    </div>
+  </p-card>
+  <p-card class="flex md:flex-2">
+    <div class="flex flex-col gap-2">
+      <div>
+        <h2 class="text-xl font-bold">Informações do Perfil</h2>
+        <p class="text-zinc-500">Atualize suas informações pessoais e de contato.</p>
+      </div>
+      <form [formGroup]="configForm" (submit)="onSubmit()" class="flex flex-col gap-4">
+        <!-- Nome e Email -->
+        <div class="flex flex-col md:flex-row gap-3">
+          <div class="flex flex-col w-full">
+            <label for="name">Nome Completo</label>
+            <input
+              pInputText
+              type="text"
+              id="name"
+              formControlName="name"
+              placeholder="Jhon Doe"
+              pSize="small"
+              [value]="userData.name"
+            />
+          </div>
+          <div class="flex flex-col w-full">
+            <label for="email">Email</label>
+            <input
+              pInputText
+              id="email"
+              formControlName="email"
+              type="text"
+              placeholder="jhon.doe@email.com"
+              [value]="userData.email"
+              pSize="small"
+            />
+          </div>
+        </div>
+
+        <!-- Biografia -->
+        <div class="flex flex-col">
+          <label for="bio">Biografia</label>
+          <textarea
+            id="bio"
+            formControlName="bio"
+            rows="5"
+            pTextarea
+            [autoResize]="true"
+            [value]="userData.bio"
+          >
+          </textarea>
+        </div>
+
+        <!-- LinkedIn e GitHub -->
+        <div class="flex flex-col md:flex-row gap-3">
+          <div class="flex flex-col w-full">
+            <label for="linkedin">LinkedIn</label>
+            <input
+              pInputText
+              id="linkedin"
+              formControlName="linkedin"
+              type="text"
+              placeholder="https://www.linkedin.com/in/jhondoe"
+              [value]="userData.linkedin"
+              pSize="small"
+            />
+          </div>
+          <div class="flex flex-col w-full">
+            <label for="github">GitHub</label>
+            <input
+              pInputText
+              id="github"
+              formControlName="github"
+              type="text"
+              placeholder="https://github.com/jhondoe"
+              [value]="userData.github"
+              pSize="small"
+            />
+          </div>
+        </div>
+
+        <!-- Botão -->
+        <div class="flex justify-end">
+          <button
+            pButton
+            type="submit"
+            severity="primary"
+            [disabled]="isUploading"
+            icon="pi pi-save"
+          >
+            Salvar Alterações
+          </button>
+        </div>
+      </form>
+    </div>
+  </p-card>
+</div>

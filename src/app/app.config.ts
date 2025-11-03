@@ -27,7 +27,6 @@ export const appConfig: ApplicationConfig = {
     MessageService,
     ConfirmationService,
     importProvidersFrom(HttpClientModule),
-    provideHttpClient(withInterceptors([loadingInterceptor])),
- //       provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor]))
+    provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor]))
   ]
 };

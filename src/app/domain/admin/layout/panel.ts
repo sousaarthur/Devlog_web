@@ -25,7 +25,7 @@ export class Panel implements AfterViewInit {
   ngAfterViewInit(): void {
     this.loadingService.loading$.subscribe(value => {
       this.loadingVisible = value;
-      this.cd.detectChanges(); // força atualização sem erro
+      this.cd.detectChanges(); 
     });
   }
 }

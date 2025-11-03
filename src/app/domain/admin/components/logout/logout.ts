@@ -12,13 +12,13 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   styleUrl: './logout.css',
 })
 export class Logout {
-    constructor(
+  constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
     private router: Router
   ) { }
 
-    logout(event: Event) {
+  logout(event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
       message: 'Você tem certeza que deseja sair?',
@@ -45,5 +45,4 @@ export class Logout {
       },
     });
   }
-
 }

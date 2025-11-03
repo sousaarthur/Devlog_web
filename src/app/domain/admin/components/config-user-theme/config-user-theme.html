@@ -1,0 +1,35 @@
+<div class="flex flex-col gap-4">
+  <p-card class="flex flex-col md:w-200">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-xl font-bold">Tema</h2>
+      <p class="text-zinc-500">Personalize a aparência do painel</p>
+      <div class="flex flex-col gap-3 md:flex-row">
+        <button pButton class="flex flex-col"  [severity]="filter === 'light' ? 'primary' : 'secondary'"(click)="switchTheme('light')">
+          <img class="w-60 rounded-lg"
+            src="https://res.cloudinary.com/devlog/image/upload/v1762127560/Screenshot_10_rhxtvb.png" />
+          <p>Claro</p>
+        </button>
+
+        <button pButton class="flex flex-col" [severity]="filter === 'dark' ? 'primary' : 'secondary'" (click)="switchTheme('dark')">
+          <img class="w-60 rounded-lg"
+            src="https://res.cloudinary.com/devlog/image/upload/v1762127560/Screenshot_9_geczbl.png" />
+          <p>Escuro</p>
+        </button>
+
+        <button pButton class="flex flex-col"  [severity]="filter === 'system' ? 'primary' : 'secondary'" (click)="switchTheme('system')">
+          <img class="w-60 rounded-lg"
+            src="https://res.cloudinary.com/devlog/image/upload/v1762128754/theme_gddyst.png" />
+          <p>Sistema</p>
+        </button>
+      </div>
+    </div>
+  </p-card>
+  <p-card class="flex flex-col md:w-200">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-xl font-bold">Idioma</h2>
+      <p class="text-zinc-500">Selecione o idioma da interface</p>
+      <p-select [options]="languages" [(ngModel)]="selectedLanguage" optionLabel="name"
+        placeholder="Selecione um idioma" class="w-full" />
+    </div>
+  </p-card>
+</div>

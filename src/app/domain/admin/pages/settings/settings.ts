@@ -8,10 +8,12 @@ import { TextareaModule } from 'primeng/textarea';
 import { configUserInfo } from "../../components/config-user-info/config-user-info";
 import { ConfigUserSecurity } from "../../components/config-user-security/config-user-security";
 import { ConfigUserTheme } from '../../components/config-user-theme/config-user-theme';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-settings',
   imports: [
+    CommonModule,
     ButtonGroupModule,
     ButtonModule,
     CardModule,
