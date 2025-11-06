@@ -9,6 +9,7 @@ import { configUserInfo } from "../../components/config-user-info/config-user-in
 import { ConfigUserSecurity } from "../../components/config-user-security/config-user-security";
 import { ConfigUserTheme } from '../../components/config-user-theme/config-user-theme';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-settings',
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
     TextareaModule,
     configUserInfo,
     ConfigUserSecurity,
-    ConfigUserTheme
+    ConfigUserTheme,
+    TranslocoModule
 ],
   templateUrl: './settings.html',
   styleUrl: './settings.css',

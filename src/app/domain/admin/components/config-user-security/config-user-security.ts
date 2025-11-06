@@ -10,6 +10,7 @@ import { TextareaModule } from 'primeng/textarea';
 import { ToastModule } from 'primeng/toast';
 import { User } from '../../../../core/service/user';
 import { ChangePassInterface } from '../../../../core/interface/changePassInterface';
+import { TranslocoModule } from '@jsverse/transloco';
 @Component({
   selector: 'app-config-user-security',
   imports: [
@@ -20,7 +21,8 @@ import { ChangePassInterface } from '../../../../core/interface/changePassInterf
     InputTextModule,
     TextareaModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslocoModule
   ],
   templateUrl: './config-user-security.html',
   styleUrl: './config-user-security.css',

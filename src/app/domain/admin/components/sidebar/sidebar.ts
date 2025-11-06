@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Logo } from "../../../../shared/components/logo/logo";
 import { DividerModule } from 'primeng/divider';
 import { CommonModule } from '@angular/common';
@@ -12,46 +12,22 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { Logout } from "../logout/logout";
 import { Login } from "../../../auth/login/login";
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [Logo, DividerModule, CommonModule, ButtonModule, AvatarModule, AvatarGroupModule, Avatar, UserInfo, ConfirmDialogModule, Logout],
+  imports: [Logo, DividerModule, CommonModule, ButtonModule, AvatarModule, AvatarGroupModule, Avatar, UserInfo, ConfirmDialogModule, Logout, TranslocoModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })
-export class Sidebar {
+export class Sidebar implements OnInit {
+  menu: any[] = []
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private router: Router
+    private router: Router,
+    private translocoService: TranslocoService
   ) { }
-  menu = [
-    {
-      name: "Dashboard",
-      icon: "pi pi-th-large",
-      router: ""
-    },
-    {
-      name: "Artigos",
-      icon: "pi pi-file-edit",
-      router: ""
-    },
-    {
-      name: "Usuários",
-      icon: "pi pi-users",
-      router: ""
-    },
-    {
-      name: "Categorias",
-      icon: "pi pi-tag",
-      router: ""
-    },
-    {
-      name: "Configurações",
-      icon: "pi pi-cog",
-      router: ""
-    }
-  ]
 
   logout(event: Event) {
     this.confirmationService.confirm({
@@ -78,6 +54,17 @@ export class Sidebar {
       reject: () => {
         this.messageService.add({ severity: 'error', summary: 'Rejeitado', detail: 'Você rejeitou a ação' });
       },
+    });
+  }
+
+  ngOnInit(): void {
+    this.translocoService.selectTranslateObject('LAYOUT.SIDEBAR.ITEMS', { bindLang: true }).subscribe(items => {
+      this.menu = [
+        { name: items.DASHBOARD, icon: 'pi pi-th-large', router: '' },
+        { name: items.ARTICLES, icon: 'pi pi-file-edit', router: '' },
+        { name: items.USERS, icon: 'pi pi-users', router: '' },
+        { name: items.SETTINGS, icon: 'pi pi-cog', router: '' },
+      ];
     });
   }
 

@@ -1,35 +1,35 @@
 <div class="flex flex-col gap-4">
   <p-card class="flex flex-col md:w-160">
     <div class="flex flex-col gap-3">
-      <h2 class="text-xl font-bold">Alterar Senha</h2>
-      <p class="text-zinc-500">Mantenha sua conta segura com uma senha forte</p>
+      <h2 class="text-xl font-bold">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.TITLE' | transloco }}</h2>
+      <p class="text-zinc-500">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.DESCRIPTION' | transloco }}</p>
       <form [formGroup]="changePasswordForm" (submit)="onSubmit()" class="flex flex-col gap-3">
         <div class="flex flex-col">
-          <label for="currentPassword">Senha Atual</label>
-          <input pInputText id="currentPassword" formControlName="currentPassword" type="password" placeholder="Digite sua senha atual" pSize="small">
+          <label for="currentPassword">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.FIELDS.CURRENT_PASSWORD' | transloco }}</label>
+          <input pInputText id="currentPassword" formControlName="currentPassword" type="password" [placeholder]="'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.PLACEHOLDERS.CURRENT_PASSWORD' | transloco" pSize="small">
         </div>
         <div class="flex flex-col">
-          <label for="newPassword">Nova Senha</label>
-          <input pInputText id="newPassword" formControlName="newPassword" type="password" placeholder="Digite sua nova senha" pSize="small">
+          <label for="newPassword">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.FIELDS.NEW_PASSWORD' | transloco }}</label>
+          <input pInputText id="newPassword" formControlName="newPassword" type="password" [placeholder]="'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.PLACEHOLDERS.NEW_PASSWORD' | transloco" pSize="small">
         </div>
         <div class="flex flex-col">
-          <label for="confirmPassword">Confirmar Nova Senha</label>
-          <input pInputText id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Confirme sua nova senha" pSize="small">
+          <label for="confirmPassword">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.FIELDS.CONFIRM_PASSWORD' | transloco }}</label>
+          <input pInputText id="confirmPassword" formControlName="confirmPassword" type="password" [placeholder]="'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.CHANGE_PASSWORD.PLACEHOLDERS.CONFIRM_PASSWORD' | transloco" pSize="small">
         </div>
         <div class="flex gap-3">
-          <button pButton type="submit" severity="primary"  icon="pi pi-save">Salvar Alterações</button>
+          <button pButton type="submit" severity="primary"  icon="pi pi-save">{{ 'GENERIC.BUTTONS.UPDATE' | transloco}}</button>
         </div>
       </form>
     </div>
   </p-card>
   <p-card class="flex flex-col md:w-160">
     <div>
-      <h2 class="text-xl font-bold">Desativar Conta</h2>
-      <p class="text-zinc-500">Você pode desativar sua conta a qualquer momento.</p>
+      <h2 class="text-xl font-bold">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.DISABLE_ACCOUNT.TITLE' | transloco }}</h2>
+      <p class="text-zinc-500">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.DISABLE_ACCOUNT.DESCRIPTION' | transloco }}</p>
     </div>
     <div class="flex flex-col gap-3 mt-3">
-      <p class="text-zinc-500">Ao desativar sua conta, você perderá o acesso total ao seu perfil e suas informações e artigos serão mantidas em nosso sistema.</p>
-      <button pButton type="button" severity="danger" (click)="deactivateUser($event)" icon="pi pi-user-slash">Desativar Conta</button> 
+      <p class="text-zinc-500">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.DISABLE_ACCOUNT.TEXT' | transloco }}</p>
+      <button pButton type="button" severity="danger" (click)="deactivateUser($event)" icon="pi pi-user-slash">{{ 'ADMIN.PAGES.SETTINGS.SECTIONS.SECURITY.DISABLE_ACCOUNT.BUTTON' | transloco }}</button> 
     </div>
   </p-card>
 </div>

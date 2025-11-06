@@ -1,0 +1,96 @@
+{
+  "GENERIC": {
+    "BUTTONS": {
+      "SAVE": "Guardar",
+      "CANCEL": "Cancelar",
+      "EDIT": "Editar",
+      "DELETE": "Excluir",
+      "UPDATE": "Guardar Cambios",
+      "UPLOAD": "Subir Archivo"
+    }
+  },
+  "LAYOUT": {
+    "SIDEBAR": {
+      "TITLE": "Menu",
+      "ITEMS": {
+        "DASHBOARD": "Dashboard",
+        "ARTICLES": "Artículos",
+        "USERS": "Usuarios",
+        "SETTINGS": "Configuraciones"
+      }
+    }
+  },
+  "ADMIN": {
+    "PAGES": {
+      "SETTINGS": {
+        "TITLE": "Configuraciones",
+        "DESCRIPTION": "Administra la configuración de tu perfil y del sistema",
+        "BUTTON_GROUP": {
+          "PROFILE": "Perfil",
+          "SECURITY": "Seguridad",
+          "APPEARANCE": "Apariencia"
+        },
+        "SECTIONS": {
+          "PROFILE": {
+            "INFO": {
+              "TITLE": "Informaciones del Perfil",
+              "DESCRIPTION": "Actualiza tu información personal y de contacto.",
+              "FIELDS": {
+                "USERNAME": "Nombre Completo",
+                "EMAIL": "Email",
+                "BIO": "Biografía"
+              }
+            },
+            "UPLOAD": {
+              "TITLE": "Foto de Perfil",
+              "DESCRIPTION": "Actualiza tu foto de perfil.",
+              "FORMATS": "PNG, JPG hasta 2MB"
+            }
+          },
+          "SECURITY": {
+            "CHANGE_PASSWORD": {
+              "TITLE": "Alterar Contraseña",
+              "DESCRIPTION": "Mantenga su cuenta segura con una contraseña segura.",
+              "FIELDS": {
+                "CURRENT_PASSWORD": "Contraseña Actual",
+                "NEW_PASSWORD": "Nueva Contraseña",
+                "CONFIRM_PASSWORD": "Confirmar Nueva Contraseña"
+              },
+              "PLACEHOLDERS": {
+                "CURRENT_PASSWORD": "Digite su contraseña actual",
+                "NEW_PASSWORD": "Digite su nueva contraseña",
+                "CONFIRM_PASSWORD": "Confirme su nueva contraseña"
+              }
+            },
+            "DISABLE_ACCOUNT": {
+              "TITLE": "Desactivar Cuenta",
+              "DESCRIPTION": "Desactive su cuenta permanentemente. Esta acción no puede ser deshecha.",
+              "TEXT": "Al desactivar su cuenta, perderá el acceso total a su perfil y su información y artículos serán mantenidos en nuestro sistema.",
+              "BUTTON": "Desactivar Cuenta"
+            }
+          },
+          "APPEARANCE": {
+            "THEMES": {
+              "TITLE": "Tema",
+              "DESCRIPTION": "Personaliza la apariencia del tablero",
+              "OPTIONS": {
+                "LIGHT": "Claro",
+                "DARK": "Oscuro",
+                "SYSTEM": "Sistema"
+              }
+            },
+            "LANGUAGE": {
+              "TITLE": "Idioma",
+              "DESCRIPTION": "Seleccione su idioma preferido para el panel",
+              "OPTIONS": {
+                "ENGLISH": "Inglés",
+                "SPANISH": "Español",
+                "PORTUGUESE": "Portugués"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

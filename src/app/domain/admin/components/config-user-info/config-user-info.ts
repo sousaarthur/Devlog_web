@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { User } from '../../../../core/service/user';
 import { uploadImage } from '../../../../core/service/upload';
 import { UserInterface } from '../../../../core/interface/userInterface';
+import { TranslocoModule } from '@jsverse/transloco';
 
 
 @Component({
@@ -22,7 +23,8 @@ import { UserInterface } from '../../../../core/interface/userInterface';
     InputTextModule,
     TextareaModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslocoModule
   ],
   templateUrl: './config-user-info.html',
   styleUrl: './config-user-info.css',
