@@ -1,0 +1,35 @@
+<div class="flex flex-col gap-4">
+  <p-card class="flex flex-col md:w-200">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-xl font-bold">{{'ADMIN.PAGES.SETTINGS.SECTIONS.APPEARANCE.THEMES.TITLE' | transloco}}</h2>
+      <p class="text-zinc-500">{{'ADMIN.PAGES.SETTINGS.SECTIONS.APPEARANCE.THEMES.DESCRIPTION' | transloco}}</p>
+      <div class="flex flex-col gap-3 md:flex-row">
+        <button pButton class="flex flex-col" [severity]="filter === 'light' ? 'primary' : 'secondary'"
+          (click)="switchTheme('light')">
+          <div class="w-50 h-30 rounded-lg bg-zinc-50"></div>
+          <p>{{'ADMIN.PAGES.SETTINGS.SECTIONS.APPEARANCE.THEMES.OPTIONS.LIGHT' | transloco}}</p>
+        </button>
+
+        <button pButton class="flex flex-col" [severity]="filter === 'dark' ? 'primary' : 'secondary'"
+          (click)="switchTheme('dark')">
+          <div class="w-50 h-30 rounded-lg bg-zinc-900"></div>
+          <p>{{'ADMIN.PAGES.SETTINGS.SECTIONS.APPEARANCE.THEMES.OPTIONS.DARK' | transloco}}</p>
+        </button>
+
+        <button pButton class="flex flex-col" [severity]="filter === 'system' ? 'primary' : 'secondary'"
+          (click)="switchTheme('system')">
+          <div class="w-50 h-30 rounded-lg bg-zinc-600"></div>
+          <p>{{'ADMIN.PAGES.SETTINGS.SECTIONS.APPEARANCE.THEMES.OPTIONS.SYSTEM' | transloco}}</p>
+        </button>
+      </div>
+    </div>
+  </p-card>
+  <p-card class="flex flex-col md:w-200">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-xl font-bold">{{'ADMIN.PAGES.SETTINGS.SECTIONS.APPEARANCE.LANGUAGE.TITLE' | transloco}}</h2>
+      <p class="text-zinc-500">{{'ADMIN.PAGES.SETTINGS.SECTIONS.APPEARANCE.LANGUAGE.DESCRIPTION' | transloco}}</p>
+      <p-select [options]="languages" [(ngModel)]="selectedLanguage" optionLabel="name"
+        placeholder="Selecione um idioma" class="w-full" (onChange)="changeLang()" />
+    </div>
+  </p-card>
+</div>

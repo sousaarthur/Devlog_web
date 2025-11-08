@@ -1,0 +1,33 @@
+<!-- SIDEBAR -->
+<aside class="hidden lg:flex flex-col min-h-screen">
+  <!-- Logo -->
+  <div class="w-full p-4">
+    <app-logo></app-logo>
+  </div>
+
+  <p-divider class="m-0" style="margin: 0;"></p-divider>
+
+  <!-- Menu -->
+  <nav class="flex flex-col gap-2 justify-between flex-1">
+    <div class="flex flex-col p-4">
+      @for (item of menu; track $index) {
+      <button pButton text fluid class="justify-start gap-3 text-left font-medium"
+        style="display: flex; justify-content: flex-start;" [routerLink]="item.router" routerLinkActive
+        #rla="routerLinkActive" [severity]="rla.isActive ? 'primary' : 'secondary'">
+        <i [ngClass]="item.icon"></i>
+        <span>{{ item.name }}</span>
+      </button>
+      }
+    </div>
+    <div class="w-full">
+      <p-divider class="m-0" style="margin: 0;"></p-divider>
+      <div class="flex">
+        <button pButton text class="flex items-center gap-3" fluid style="display: flex; justify-content: flex-start;">
+          <app-avatar></app-avatar>
+          <app-user-info></app-user-info>
+        </button>
+        <app-logout></app-logout>
+      </div>
+    </div>
+  </nav>
+</aside>

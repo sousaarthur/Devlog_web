@@ -1,0 +1,124 @@
+{
+  "GENERIC": {
+    "BUTTONS": {
+      "SAVE": "Salvar",
+      "CANCEL": "Cancelar",
+      "EDIT": "Editar",
+      "DELETE": "Excluir",
+      "UPDATE": "Salvar Alterações",
+      "UPLOAD": "Fazer Upload"
+    }
+  },
+  "DIALOGS": {
+    "CONFIRM_LOGOUT": {
+      "TITLE": "Sair da Conta",
+      "MESSAGE": "Você tem certeza que deseja sair da sua conta?",
+      "CONFIRM_BUTTON": "Sair"
+    },
+    "DISABLE_ACCOUNT": {
+      "TITLE": "Desativar Conta",
+      "MESSAGE": "Você tem certeza que deseja desativar sua conta?",
+      "CONFIRM_BUTTON": "Desativar Conta"
+    }
+  },
+  "MESSAGES": {
+    "SUMMARY": {
+      "SUCCESS": "Sucesso",
+      "ERROR": "Erro",
+      "INFO": "Informação",
+      "WARNING": "Aviso"
+    },
+    "DETAILS": {
+      "SAVE_SUCCESS": "As alterações foram salvas com sucesso.",
+      "DELETE_SUCCESS": "O item foi excluído com sucesso.",
+      "UPLOAD_SUCCESS": "O arquivo foi enviado com sucesso.",
+      "LOGOUT_SUCCESS": "Você saiu da sua conta com sucesso.",
+      "DISABLE_ACCOUNT_SUCCESS": "Sua conta foi desativada com sucesso."
+    }
+  },
+  "LAYOUT": {
+    "SIDEBAR": {
+      "TITLE": "Menu",
+      "ITEMS": {
+        "DASHBOARD": "Dashboard",
+        "NEWS": "Notícias",
+        "ARTICLES": "Artigos",
+        "USERS": "Usuários",
+        "SETTINGS": "Configurações"
+      }
+    }
+  },
+  "ADMIN": {
+    "PAGES": {
+      "SETTINGS": {
+        "TITLE": "Configurações",
+        "DESCRIPTION": "Gerencie as configurações do seu perfil e do sistema",
+        "BUTTON_GROUP": {
+          "PROFILE": "Perfil",
+          "SECURITY": "Segurança",
+          "APPEARANCE": "Aparência"
+        },
+        "SECTIONS": {
+          "PROFILE": {
+            "INFO": {
+              "TITLE": "Informações do Perfil",
+              "DESCRIPTION": "Atualize suas informações pessoais e de contato.",
+              "FIELDS": {
+                "USERNAME": "Nome Completo",
+                "EMAIL": "Email",
+                "BIO": "Biografia"
+              }
+            },
+            "UPLOAD": {
+              "TITLE": "Foto de Perfil",
+              "DESCRIPTION": "Atualize sua foto de perfil.",
+              "FORMATS": "PNG, JPG até 2MB"
+            }
+          },
+          "SECURITY": {
+            "CHANGE_PASSWORD": {
+              "TITLE": "Alterar Senha",
+              "DESCRIPTION": "Mantenha sua conta segura com uma senha forte.",
+              "FIELDS": {
+                "CURRENT_PASSWORD": "Senha Atual",
+                "NEW_PASSWORD": "Nova Senha",
+                "CONFIRM_PASSWORD": "Confirmar Nova Senha"
+              },
+              "PLACEHOLDERS": {
+                "CURRENT_PASSWORD": "Digite sua senha atual",
+                "NEW_PASSWORD": "Digite sua nova senha",
+                "CONFIRM_PASSWORD": "Confirme sua nova senha"
+              }
+            },
+            "DISABLE_ACCOUNT": {
+              "TITLE": "Desativar Conta",
+              "DESCRIPTION": "Desative sua conta permanentemente. Esta ação não pode ser desfeita.",
+              "TEXT": "Ao desativar sua conta, você perderá o acesso total ao seu perfil e suas informações e artigos serão mantidas em nosso sistema.",
+              "BUTTON": "Desativar Conta"
+            }
+          },
+          "APPEARANCE": {
+            "THEMES": {
+              "TITLE": "Tema",
+              "DESCRIPTION": "Personalize a aparência do painel",
+              "OPTIONS": {
+                "LIGHT": "Claro",
+                "DARK": "Escuro",
+                "SYSTEM": "Sistema"
+              }
+            },
+            "LANGUAGE": {
+              "TITLE": "Idioma",
+              "DESCRIPTION": "Selecione o idioma preferido para o painel",
+              "OPTIONS": {
+                "ENGLISH": "Inglês",
+                "SPANISH": "Espanhol",
+                "PORTUGUESE": "Português"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

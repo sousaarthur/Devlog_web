@@ -1,0 +1,111 @@
+{
+  "GENERIC": {
+    "BUTTONS": {
+      "SAVE": "Save",
+      "CANCEL": "Cancel",
+      "EDIT": "Edit",
+      "DELETE": "Delete",
+      "UPDATE": "Update Changes",
+      "UPLOAD": "Upload File"
+    }
+  },
+  "DIALOGS": {
+    "CONFIRM_LOGOUT": {
+      "TITLE": "Exit Account",
+      "MESSAGE": "Are you sure you want to log out of your account?",
+      "CONFIRM_BUTTON": "Log Out",
+      "CANCEL_BUTTON": "Cancel"
+    },
+    "DISABLE_ACCOUNT": {
+      "TITLE": "Disable Account",
+      "MESSAGE": "Are you sure you want to disable your account?",
+      "CONFIRM_BUTTON": "Disable Account",
+      "CANCEL_BUTTON": "Cancel"
+    }
+  },
+  "LAYOUT": {
+    "SIDEBAR": {
+      "TITLE": "Menu",
+      "ITEMS": {
+        "DASHBOARD": "Dashboard",
+        "NEWS": "News",
+        "ARTICLES": "Articles",
+        "USERS": "Users",
+        "SETTINGS": "Settings"
+      }
+    }
+  },
+  "ADMIN": {
+    "PAGES": {
+      "SETTINGS": {
+        "TITLE": "Settings",
+        "DESCRIPTION": "Manage your profile and system settings",
+        "BUTTON_GROUP": {
+          "PROFILE": "Profile",
+          "SECURITY": "Security",
+          "APPEARANCE": "Appearance"
+        },
+        "SECTIONS": {
+          "PROFILE": {
+            "INFO": {
+              "TITLE": "Profile Information",
+              "DESCRIPTION": "Update your personal and contact information.",
+              "FIELDS": {
+                "USERNAME": "Full Name",
+                "EMAIL": "Email",
+                "BIO": "Biography"
+              }
+            },
+            "UPLOAD": {
+              "TITLE": "Profile Picture",
+              "DESCRIPTION": "Update your profile picture.",
+              "FORMATS": "PNG, JPG up to 2MB"
+            }
+          },
+          "SECURITY": {
+            "CHANGE_PASSWORD": {
+              "TITLE": "Change Password",
+              "DESCRIPTION": "Keep your account secure with a strong password.",
+              "FIELDS": {
+                "CURRENT_PASSWORD": "Current Password",
+                "NEW_PASSWORD": "New Password",
+                "CONFIRM_PASSWORD": "Confirm New Password"
+              },
+              "PLACEHOLDERS": {
+                "CURRENT_PASSWORD": "Enter your current password",
+                "NEW_PASSWORD": "Enter your new password",
+                "CONFIRM_PASSWORD": "Confirm your new password"
+              }
+            },
+            "DISABLE_ACCOUNT": {
+              "TITLE": "Disable Account",
+              "DESCRIPTION": "Permanently disable your account. This action cannot be undone.",
+              "TEXT": "By disabling your account, you will lose full access to your profile and your information and articles will be retained in our system.",
+              "BUTTON": "Disable Account"
+            }
+          },
+          "APPEARANCE": {
+            "THEMES": {
+              "TITLE": "Themes",
+              "DESCRIPTION": "Customize the appearance of the dashboard",
+              "OPTIONS": {
+                "LIGHT": "Light",
+                "DARK": "Dark",
+                "SYSTEM": "System"
+              }
+            },
+            "LANGUAGE": {
+              "TITLE": "Language",
+              "DESCRIPTION": "Select your preferred language for the panel",
+              "OPTIONS": {
+                "ENGLISH": "English",
+                "SPANISH": "Spanish",
+                "PORTUGUESE": "Portuguese"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

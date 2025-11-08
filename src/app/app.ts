@@ -1,8 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { Toast } from 'primeng/toast';
 import { ConfirmDialog } from "primeng/confirmdialog";
+import { ThemeService } from './core/service/theme';
+import { Language } from './core/service/language';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +12,13 @@ import { ConfirmDialog } from "primeng/confirmdialog";
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('blog_web');
-  toggleDarkMode() {
-    const element = document.querySelector('html');
-    if (element) {
-      element.classList.toggle('my-app-dark');
-    }
+
+  constructor(private themeService: ThemeService, private langService: Language) { }
+
+  ngOnInit(): void {
+    this.themeService.initTheme();
+    this.langService.getLanguage();
   }
 }
