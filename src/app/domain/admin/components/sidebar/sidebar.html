@@ -11,8 +11,9 @@
   <nav class="flex flex-col gap-2 justify-between flex-1">
     <div class="flex flex-col p-4">
       @for (item of menu; track $index) {
-      <button pButton text severity="secondary" fluid class="justify-start gap-3 text-left font-medium"
-        style="display: flex; justify-content: flex-start;">
+      <button pButton text fluid class="justify-start gap-3 text-left font-medium"
+        style="display: flex; justify-content: flex-start;" [routerLink]="item.router" routerLinkActive
+        #rla="routerLinkActive" [severity]="rla.isActive ? 'primary' : 'secondary'">
         <i [ngClass]="item.icon"></i>
         <span>{{ item.name }}</span>
       </button>

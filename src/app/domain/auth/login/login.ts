@@ -68,8 +68,16 @@ export class Login implements OnInit {
         this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Usuário logado com sucesso!' });
       },
       error: (err) => {
-        console.error('Erro ao logar usuário:', err);
-        this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Usuário ou senha invalido!' });
+        console.error('Erro no login:', err);
+        const mensagemErro =
+          err.error?.message ||
+          'Erro inesperado no servidor. Tente novamente.';
+
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Erro',
+          detail: mensagemErro
+        });
       }
     });
 

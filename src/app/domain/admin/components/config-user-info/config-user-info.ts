@@ -30,7 +30,7 @@ import { TranslocoModule } from '@jsverse/transloco';
   styleUrl: './config-user-info.css',
 })
 export class configUserInfo implements OnInit {
-constructor(
+  constructor(
     private messageService: MessageService,
     private userService: User,
     private cdr: ChangeDetectorRef,
@@ -48,7 +48,7 @@ constructor(
   ngOnInit(): void {
     this.configForm = this.fb.group({
       name: ['', [Validators.required]],
-      email: [''],
+      email: [{ value: '', disabled: true }],
       bio: [''],
       linkedin: [''],
       github: [''],
@@ -66,9 +66,8 @@ constructor(
         this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Upload feito com sucesso!' });
         this.isUploading = false;
       },
-      error: (err) => {
-        console.error("Erro ao fazer upload:", err);
-        this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao fazer upload!' });
+      error: (err) => {;
+        this.messageService.add({ severity: 'error', summary: 'Erro', detail: err.error?.message });
         this.isUploading = false;
       }
     })
@@ -114,7 +113,7 @@ constructor(
         console.log(data);
       },
       error: (err) => {
-        console.error(err);
+        this.messageService.add({ severity: 'error', summary: 'Erro', detail: err.error?.message });
       }
     })
   }

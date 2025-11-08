@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { Logo } from "../../../../shared/components/logo/logo";
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
@@ -8,12 +8,13 @@ import { DrawerModule } from 'primeng/drawer';
 import { User } from '../../../../core/service/user';
 import { UserInterface } from '../../../../core/interface/userInterface';
 import { UserInfo } from '../user-info/user-info';
-import { Login } from "../../../auth/login/login";
 import { Logout } from '../logout/logout';
+import { MenuRoutes } from '../../../../core/service/menu-routes';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-drawer-menu',
-  imports: [Logo, ButtonModule, CommonModule, DividerModule, Avatar, DrawerModule, UserInfo, Logout],
+  imports: [Logo, ButtonModule, CommonModule, DividerModule, Avatar, DrawerModule, UserInfo, Logout, RouterModule],
   standalone: true,
   templateUrl: './drawer-menu.html',
   styleUrl: './drawer-menu.css',
@@ -21,20 +22,23 @@ import { Logout } from '../logout/logout';
 export class DrawerMenu implements OnInit {
   @Input() visible = false;
   @Output() visibleChange = new EventEmitter<boolean>();
-
+  menu: any[] = []
   user: UserInterface = {};
 
-  constructor(private service:User){}
+  isMobile = window.innerWidth < 1023;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobile = window.innerWidth < 1023;
+  }
+
+  constructor(
+    private service: User,
+    private menuRouter: MenuRoutes
+  ) { }
 
   ngOnInit(): void {
-      this.service.get().subscribe({
-        next: (data) => {
-          this.user = {
-            name: data.name,
-            email: data.email
-          }
-        }
-      })
+    this.loadMenu();
   }
 
   toggleDrawer() {
@@ -42,31 +46,9 @@ export class DrawerMenu implements OnInit {
     this.visibleChange.emit(this.visible);
   }
 
-  menu = [
-    {
-      name: "Dashboard",
-      icon: "pi pi-th-large",
-      router: ""
-    },
-    {
-      name: "Artigos",
-      icon: "pi pi-file-edit",
-      router: ""
-    },
-    {
-      name: "Usuários",
-      icon: "pi pi-users",
-      router: ""
-    },
-    {
-      name: "Categorias",
-      icon: "pi pi-tag",
-      router: ""
-    },
-    {
-      name: "Configurações",
-      icon: "pi pi-cog",
-      router: ""
-    }
-  ]
+  loadMenu() {
+    this.menuRouter.getMenu().subscribe(menu => {
+      this.menu = menu;
+    });
+  }
 }

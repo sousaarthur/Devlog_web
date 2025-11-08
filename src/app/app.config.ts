@@ -10,7 +10,7 @@ import { jwtInterceptor } from './core/interceptor/jwt-interceptor';
 import { loadingInterceptor } from './core/interceptor/loading-interceptor';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@jsverse/transloco';
-import { Language } from './core/service/language';
+import { i18nInteceptor } from './core/interceptor/i18n-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,7 +30,7 @@ export const appConfig: ApplicationConfig = {
     MessageService,
     ConfirmationService,
     importProvidersFrom(HttpClientModule),
-    provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor])), provideHttpClient(), provideTransloco({
+    provideHttpClient(withInterceptors([jwtInterceptor, loadingInterceptor, i18nInteceptor])), provideHttpClient(), provideTransloco({
         config: { 
           availableLangs: ['pt-BR', 'es', 'en'],
           defaultLang: 'pt-BR',

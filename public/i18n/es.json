@@ -9,11 +9,26 @@
       "UPLOAD": "Subir Archivo"
     }
   },
+  "DIALOGS": {
+    "CONFIRM_LOGOUT": {
+      "TITLE": "Cerrar Sesión",
+      "MESSAGE": "¿Está seguro de que desea cerrar sesión?",
+      "CONFIRM_BUTTON": "Cerrar Sesión",
+      "CANCEL_BUTTON": "Cancelar"
+    },
+    "DISABLE_ACCOUNT": {
+      "TITLE": "Desactivar Cuenta",
+      "MESSAGE": "¿Está seguro de que desea desactivar su cuenta?",
+      "CONFIRM_BUTTON": "Desactivar Cuenta",
+      "CANCEL_BUTTON": "Cancelar"
+    }
+  },
   "LAYOUT": {
     "SIDEBAR": {
       "TITLE": "Menu",
       "ITEMS": {
         "DASHBOARD": "Dashboard",
+        "NEWS": "Noticias",
         "ARTICLES": "Artículos",
         "USERS": "Usuarios",
         "SETTINGS": "Configuraciones"

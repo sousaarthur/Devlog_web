@@ -10,7 +10,7 @@ import { TextareaModule } from 'primeng/textarea';
 import { ToastModule } from 'primeng/toast';
 import { User } from '../../../../core/service/user';
 import { ChangePassInterface } from '../../../../core/interface/changePassInterface';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 @Component({
   selector: 'app-config-user-security',
   imports: [
@@ -39,7 +39,8 @@ export class ConfigUserSecurity {
     private messageService: MessageService,
     private router: Router,
     private confirmationService: ConfirmationService,
-    private userService: User
+    private userService: User,
+    private transloco: TranslocoService
   ) { }
 
   onSubmit() {
@@ -65,25 +66,21 @@ export class ConfigUserSecurity {
   deactivateUser(event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
-      message: 'Você tem certeza que deseja desativar sua conta?',
-      header: 'Desativar conta',
+      message: this.transloco.translate('DIALOGS.DISABLE_ACCOUNT.MESSAGE'),
+      header: this.transloco.translate('DIALOGS.DISABLE_ACCOUNT.TITLE'),
       icon: 'pi pi-info-circle',
-      rejectLabel: 'Cancelar',
+      rejectLabel: this.transloco.translate('GENERIC.BUTTONS.CANCEL'),
       rejectButtonProps: {
-        label: 'Cancelar',
+        label: this.transloco.translate('GENERIC.BUTTONS.CANCEL'),
         severity: 'secondary',
         outlined: true,
       },
       acceptButtonProps: {
-        label: 'Desativar',
+        label: this.transloco.translate('DIALOGS.DISABLE_ACCOUNT.CONFIRM_BUTTON'),
         severity: 'danger',
       },
-
       accept: () => {
         this.disable();
-      },
-      reject: () => {
-        this.messageService.add({ severity: 'error', summary: 'Rejeitado', detail: 'Você rejeitou a ação' });
       },
     });
   }

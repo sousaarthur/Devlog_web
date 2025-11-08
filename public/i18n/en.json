@@ -9,11 +9,26 @@
       "UPLOAD": "Upload File"
     }
   },
+  "DIALOGS": {
+    "CONFIRM_LOGOUT": {
+      "TITLE": "Exit Account",
+      "MESSAGE": "Are you sure you want to log out of your account?",
+      "CONFIRM_BUTTON": "Log Out",
+      "CANCEL_BUTTON": "Cancel"
+    },
+    "DISABLE_ACCOUNT": {
+      "TITLE": "Disable Account",
+      "MESSAGE": "Are you sure you want to disable your account?",
+      "CONFIRM_BUTTON": "Disable Account",
+      "CANCEL_BUTTON": "Cancel"
+    }
+  },
   "LAYOUT": {
     "SIDEBAR": {
       "TITLE": "Menu",
       "ITEMS": {
         "DASHBOARD": "Dashboard",
+        "NEWS": "News",
         "ARTICLES": "Articles",
         "USERS": "Users",
         "SETTINGS": "Settings"

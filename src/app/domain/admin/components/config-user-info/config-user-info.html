@@ -49,6 +49,8 @@
               placeholder="Jhon Doe"
               pSize="small"
               [value]="userData.name"
+              [disabled]="true"
+              autocomplete="off"
             />
           </div>
           <div class="flex flex-col w-full">
@@ -61,6 +63,7 @@
               placeholder="jhon.doe@email.com"
               [value]="userData.email"
               pSize="small"
+              autocomplete="off"
             />
           </div>
         </div>
@@ -75,6 +78,7 @@
             pTextarea
             [autoResize]="true"
             [value]="userData.bio"
+            autocomplete="off"
           >
           </textarea>
         </div>
@@ -91,6 +95,7 @@
               placeholder="https://www.linkedin.com/in/jhondoe"
               [value]="userData.linkedin"
               pSize="small"
+              autocomplete="off"
             />
           </div>
           <div class="flex flex-col w-full">
@@ -103,6 +108,7 @@
               placeholder="https://github.com/jhondoe"
               [value]="userData.github"
               pSize="small"
+              autocomplete="off"
             />
           </div>
         </div>
@@ -115,6 +121,7 @@
             severity="primary"
             [disabled]="isUploading"
             icon="pi pi-save"
+            [disabled]="configForm.pristine || configForm.invalid"
           >
             {{'GENERIC.BUTTONS.UPDATE' | transloco}} 
           </button>
