@@ -105,6 +105,30 @@
             }
           }
         }
+      },
+      "USERS": {
+        "TITLE": "Users",
+        "DESCRIPTION": "Manage all registered users in the system",
+        "TABLE": {
+          "HEADERS": {
+            "USER": "User",
+            "EMAIL": "Email",
+            "ROLE": "Role",
+            "STATUS": "Status",
+            "CREATED": "Created On",
+            "ACTIONS": "Actions"
+          }
+        },
+        "BUTTON": {
+          "ADD_USER": "Add User"
+        },
+        "PLACEHOLDERS": {
+          "SEARCH_USER": "Search user by name or email"
+        },
+        "STATUS": {
+          "ACTIVE": "Active",
+          "INACTIVE": "Inactive"
+        }
       }
     }
   }

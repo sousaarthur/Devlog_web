@@ -5,9 +5,9 @@ import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
-import { configUserInfo } from "../../components/config-user-info/config-user-info";
-import { ConfigUserSecurity } from "../../components/config-user-security/config-user-security";
-import { ConfigUserTheme } from '../../components/config-user-theme/config-user-theme';
+import { configUserInfo } from '../../components/tabs-config/config-user-info/config-user-info'; 
+import { ConfigUserSecurity } from "../../components/tabs-config/config-user-security/config-user-security";
+import { ConfigUserTheme } from '../../components/tabs-config/config-user-theme/config-user-theme';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 

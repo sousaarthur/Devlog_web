@@ -7,9 +7,9 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
 import { ButtonModule } from 'primeng/button';
 import { TextareaModule } from 'primeng/textarea';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../../../../core/service/user';
-import { uploadImage } from '../../../../core/service/upload';
-import { UserInterface } from '../../../../core/interface/userInterface';
+import { User } from '../../../../../core/service/user';
+import { uploadImage } from '../../../../../core/service/upload';
+import { UserInterface } from '../../../../../core/interface/userInterface';
 import { TranslocoModule } from '@jsverse/transloco';
 
 

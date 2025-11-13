@@ -10,9 +10,9 @@ import { TextareaModule } from 'primeng/textarea';
 import { ToastModule } from 'primeng/toast';
 import { Select } from 'primeng/select';
 import { CommonModule } from '@angular/common';
-import { ThemeService } from '../../../../core/service/theme';
+import { ThemeService } from '../../../../../core/service/theme';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { Language } from '../../../../core/service/language';
+import { Language } from '../../../../../core/service/language';
 
 interface language {
   name: string;

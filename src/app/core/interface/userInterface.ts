@@ -7,4 +7,6 @@ export interface UserInterface {
   github?:string;
   email?:string;
   role?:string;
+  status?: boolean;
+  createdAt?:string;
 }

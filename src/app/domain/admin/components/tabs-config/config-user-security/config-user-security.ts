@@ -8,8 +8,8 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
 import { ToastModule } from 'primeng/toast';
-import { User } from '../../../../core/service/user';
-import { ChangePassInterface } from '../../../../core/interface/changePassInterface';
+import { User } from '../../../../../core/service/user';
+import { ChangePassInterface } from '../../../../../core/interface/changePassInterface';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 @Component({
   selector: 'app-config-user-security',

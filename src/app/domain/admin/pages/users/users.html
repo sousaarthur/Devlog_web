@@ -1,1 +1,72 @@
-<p>users works!</p>
+<section class="flex flex-col gap-3">
+  <div class="flex justify-between">
+    <div>
+      <h1 class="text-3xl font-bold">{{ 'ADMIN.PAGES.USERS.TITLE' | transloco}}</h1>
+      <p class="text-zinc-500">{{ 'ADMIN.PAGES.USERS.DESCRIPTION' | transloco}}</p>
+    </div>
+    <div class="flex justify-center items-center">
+      <button icon="pi pi-plus" pButton>{{ 'ADMIN.PAGES.USERS.BUTTON.ADD_USER' | transloco}}</button>
+    </div>
+  </div>
+  <p-card>
+    <div class="flex gap-2 w-full">
+      <div class="w-full">
+        <p-iconfield>
+          <p-inputicon class="pi pi-search" />
+          <input type="text" pInputText [placeholder]="'ADMIN.PAGES.USERS.PLACEHOLDERS.SEARCH_USER' | transloco"
+            fluid />
+        </p-iconfield>
+      </div>
+      <p-select></p-select>
+      <p-select></p-select>
+      <button icon="pi pi-search" pButton>Pesquisar</button>
+    </div>
+    <div>
+      <p-table [value]="users" [lazy]="true" [totalRecords]="totalRecords" [paginator]="true" [rows]="5" responsiveLayout="stack" (onLazyLoad)="listUsers($any($event))">
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width:15%">{{ 'ADMIN.PAGES.USERS.TABLE.HEADERS.USER' | transloco}}</th>
+            <th style="width:15%">{{ 'ADMIN.PAGES.USERS.TABLE.HEADERS.EMAIL' | transloco}}</th>
+            <th style="width:10%">{{ 'ADMIN.PAGES.USERS.TABLE.HEADERS.ROLE' | transloco}}</th>
+            <th style="width:10%">{{ 'ADMIN.PAGES.USERS.TABLE.HEADERS.STATUS' | transloco}}</th>
+            <th style="width:10%">{{ 'ADMIN.PAGES.USERS.TABLE.HEADERS.CREATED' | transloco}}</th>
+            <th style="width:10%">{{ 'ADMIN.PAGES.USERS.TABLE.HEADERS.ACTIONS' | transloco}}</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-user>
+          <tr>
+            <td>
+              <div class="flex items-center gap-2 font-bold">
+                <p-avatar shape="circle" [image]="user.avatar" />
+                {{ user.name }}
+              </div>
+            </td>
+            <td>{{ user.email }}</td>
+            <td>
+              <p-tag [icon]="user.role == 'OWNER' ? 'pi pi-crown' : user.role == 'ADMIN' ? 'pi pi-shield' : 'pi pi-pencil'"
+                [severity]="user.role == 'OWNER' ? 'warn' : user.role == 'ADMIN' ? 'success' : 'info'">
+                {{ user.role }}
+              </p-tag>
+            </td>
+            <td>
+              <p-tag [severity]="user.status ? 'success' : 'danger'">
+                {{ user.status == true ? ['ADMIN.PAGES.USERS.STATUS.ACTIVE' | transloco] :
+                ['ADMIN.PAGES.USERS.STATUS.INACTIVE' | transloco] }}
+              </p-tag>
+            </td>
+            <td>{{ user.createdAt }}</td>
+            <td class="flex gap-2">
+              <p-button pTooltip="Editar" tooltipPosition="left" icon="pi pi-pen-to-square" severity="primary" text/>
+              @if(user.status == true){
+                <p-button pTooltip="Desativar" icon="pi pi-ban" severity="danger" text (onClick)="onDisable(user.id)"/>
+              } @else {
+                <p-button pTooltip="Ativar" icon="pi pi-check" severity="success" text (onClick)="onActive(user.id)"/>
+              }
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </p-card>
+</section>

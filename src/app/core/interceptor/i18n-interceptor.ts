@@ -7,6 +7,5 @@ export const i18nInteceptor: HttpInterceptorFn = (req, next) => {
       'Accept-Language': `${language}`
     }
   })
-  console.log(language)
   return next(newReq);
 };

@@ -118,6 +118,31 @@
             }
           }
         }
+      },
+
+      "USERS": {
+        "TITLE": "Usuários",
+        "DESCRIPTION": "Gerencie todos os usuários registrados no sistema",
+        "TABLE": {
+          "HEADERS": {
+            "USER": "Usuário",
+            "EMAIL": "Email",
+            "ROLE": "Cargo",
+            "STATUS": "Status",
+            "CREATED": "Criado Em",
+            "ACTIONS": "Ações"
+          }
+        },
+        "BUTTON": {
+          "ADD_USER": "Adicionar Usuário"
+        },
+        "PLACEHOLDERS": {
+          "SEARCH_USER": "Pesquisar usuário por nome ou email"
+        },
+        "STATUS": {
+          "ACTIVE": "Ativo",
+          "INACTIVE": "Inativo"
+        }
       }
     }
   }

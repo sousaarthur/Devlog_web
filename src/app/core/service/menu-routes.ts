@@ -10,10 +10,17 @@ export class MenuRoutes {
   constructor(
     private translocoService: TranslocoService,
     private userService: User
-  ) {}
+  ) { }
 
   private menuConfig: Record<string, any[]> = {
     ADMIN: [
+      { key: 'NEWS', icon: 'pi pi-megaphone', router: '/admin/news' },
+      { key: 'DASHBOARD', icon: 'pi pi-th-large', router: '/admin/dashboard' },
+      { key: 'ARTICLES', icon: 'pi pi-file-edit', router: '/admin/articles' },
+      { key: 'USERS', icon: 'pi pi-users', router: '/admin/users' },
+      { key: 'SETTINGS', icon: 'pi pi-cog', router: '/admin/settings' },
+    ],
+    OWNER: [
       { key: 'NEWS', icon: 'pi pi-megaphone', router: '/admin/news' },
       { key: 'DASHBOARD', icon: 'pi pi-th-large', router: '/admin/dashboard' },
       { key: 'ARTICLES', icon: 'pi pi-file-edit', router: '/admin/articles' },

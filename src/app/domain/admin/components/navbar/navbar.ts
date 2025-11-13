@@ -11,10 +11,11 @@ import { CommonModule } from '@angular/common';
 import { MenuModule } from 'primeng/menu';
 import { Avatar } from "../../../../shared/components/avatar/avatar";
 import { DrawerMenu } from "../drawer-menu/drawer-menu";
+import { TooltipModule, Tooltip } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-navbar',
-  imports: [AvatarGroupModule, AvatarModule, ButtonModule, DividerModule, DrawerModule, IconFieldModule, InputIconModule, InputTextModule, CommonModule, MenuModule, DrawerMenu],
+  imports: [AvatarGroupModule, AvatarModule, ButtonModule, DividerModule, DrawerModule, IconFieldModule, InputIconModule, InputTextModule, CommonModule, MenuModule, DrawerMenu, Tooltip],
   standalone: true,
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',

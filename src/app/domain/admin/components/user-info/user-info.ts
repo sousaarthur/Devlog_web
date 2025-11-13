@@ -24,7 +24,7 @@ export class UserInfo implements OnInit {
         this.user = {
           name: data.name,
           email: data.email,
-          role: data.role == "WRITER" ? "ESCRITOR" : data.role == "READER" ? "LEITOR" : "ADMIN"
+          role: data.role
         };
         this.cdr.detectChanges();
       }
